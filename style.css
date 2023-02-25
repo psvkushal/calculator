@@ -6,6 +6,13 @@ body {
     height: 100vh;
 }
 
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
 .calculator {
     display: flex;
     height: 80vh;
@@ -23,10 +30,16 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    gap: 5%;
+    gap: 3%;
 }
 
 .display {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    
     border-style: solid;
     border-radius: 2vh;
     flex: 1;
