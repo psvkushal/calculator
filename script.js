@@ -13,11 +13,30 @@ collectedNum2point = false;
 buttons.forEach(eventListner)
 
 function eventListner(button){
-    button.addEventListener("click",dataCollection);
+    button.addEventListener("click",dataCollectionMouse);
 }
 
-function dataCollection(e){
+function dataCollectionMouse(e){
     data = e.srcElement.id;
+    dataProcessing(data);
+}
+
+document.addEventListener("keydown",dataCollectionKeyboard);
+
+function dataCollectionKeyboard(e){
+    //console.log(e);
+    data = e.key;
+    if(data == "Enter"){
+        data = "=";
+    }
+    if(data == "Backspace"){
+        data = "clear"
+    }
+    console.log(data);
+    dataProcessing(data);
+}
+
+function dataProcessing(data){
     //console.log(data);
     if((0 <= data -"0") && (data - "0" <= 9)){
         //console.log("got number " + data);
