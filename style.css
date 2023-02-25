@@ -62,3 +62,12 @@ body {
     font-size: 20px;
 }
 
+.button:hover{
+    background-color: brown;
+    color: white;
+}
+
+.button:active {
+    background-color: darkred;
+}
+
