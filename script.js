@@ -1,6 +1,9 @@
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll(".button");
 
+var audio1 = new Audio("sounds/mixkit-arcade-game-jump-coin-216.wav");
+var audio2 = new Audio("sounds/mixkit-camera-shutter-click-1133.wav");
+var audio3 = new Audio("sounds/mixkit-clear-mouse-clicks-2997.wav");
 strNum1 = "";
 strNum2 = "";
 opr = "";
@@ -17,6 +20,8 @@ function eventListner(button){
 }
 
 function dataCollectionMouse(e){
+    audio3.currentTime = 0;
+    audio3.play();
     data = e.srcElement.id;
     dataProcessing(data);
 }
@@ -25,6 +30,8 @@ document.addEventListener("keydown",dataCollectionKeyboard);
 
 function dataCollectionKeyboard(e){
     //console.log(e);
+    audio1.currentTime = 0;
+    audio1.play();
     data = e.key;
     if(data == "Enter"){
         data = "=";
@@ -189,6 +196,7 @@ function operation(num1, num2, opr) {
             break;
         case "/":
             result = num1/num2;
+            displayError()
             break
         default:
             console.log("in function operation unknown opr found");
